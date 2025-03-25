@@ -37,7 +37,7 @@ const HomeScreen = () => {
           color="#000000"
           size={Button.sizes.large}
           labelStyle={{ fontSize: 20, fontWeight: "bold" }}
-          paddingH={true} />
+          style={{ paddingHorizontal: 40, paddingVertical: 12 }} />
         <Button
           label="Register"
           onPress={() => { }}
@@ -45,7 +45,8 @@ const HomeScreen = () => {
           outlineColor={Colors.white}
           borderRadius={5}
           size={Button.sizes.large}
-          labelStyle={{ fontSize: 20, fontWeight: "bold" }} />
+          labelStyle={{ fontSize: 20, fontWeight: "bold" }}
+          style={{ paddingHorizontal: 40, paddingVertical: 12 }} />
       </View>
       <Image
         source={{
