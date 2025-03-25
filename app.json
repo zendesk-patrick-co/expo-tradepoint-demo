@@ -14,8 +14,9 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#252324"
+      },
+      "package": "com.patrick.co.expotradepointdemo"
     },
     "web": {
       "bundler": "metro",
@@ -28,9 +29,8 @@
         "expo-splash-screen",
         {
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#252324",
+          "imageWidth": 200
         }
       ]
     ],

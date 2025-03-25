@@ -1,74 +1,125 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Button, Carousel, Colors, Spacings } from 'react-native-ui-lib';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+const HomeScreen = () => {
+  const carouselImages = [
+    "https://media.diy.com/is/image/KingfisherDigital/8b8ee8838a6e1da3b7d9132a13304247173dcbea?$WCMS_NPI_FW_M$",
+    "https://media.diy.com/is/image/KingfisherDigital/3ce7340454512723d2e565188d66dbe842efa91f?$WCMS_NPI_FW_M$",
+    "https://media.diy.com/is/image/KingfisherDigital/bacab61641eb3a8d3af5cb6213c327ab53e6969f?$WCMS_NPI_FW_M$"
+  ]
 
-export default function HomeScreen() {
+  const categoryImages = [
+    "https://s7g10.scene7.com/is/image/KingfisherDigital/59caa93f1118ffd4c927dc51c27b859352b76976?$WCMS_NPI_FW_S$",
+    "https://s7g10.scene7.com/is/image/KingfisherDigital/d5125aaf915e77ea7d4ef7438c8aafaf65fc6052?$WCMS_NPI_FW_S$",
+    "https://s7g10.scene7.com/is/image/KingfisherDigital/d60c452a4bcac80740dc591ab958cf513c215ddd?$WCMS_NPI_FW_S$",
+    "https://s7g10.scene7.com/is/image/KingfisherDigital/44a9f39a20ad40efa03798fb6cc8b231d184b804?$WCMS_NPI_FW_S$",
+    "https://s7g10.scene7.com/is/image/KingfisherDigital/8641460d3104d760e5cb1fdb7042100a1a40fd56?$WCMS_NPI_FW_S$",
+    "https://s7g10.scene7.com/is/image/KingfisherDigital/1068e80558f6b72fac98a0d673a158ba6abd33bd?$WCMS_NPI_FW_S$",
+    "https://media.diy.com/is/image/KingfisherDigital/WCMS_sq_img?$bgc=ededed&$fgi=KingfisherDigital/4812c7df885bb91390bee67fcb34d1f01b87d907"
+  ]
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <ScrollView>
+      <View style={styles.headerBackground} />
+      <View style={{ marginTop: 40, paddingHorizontal: 16, paddingBottom: 16 }}>
+        <View style={styles.searchInput}>
+          <Ionicons size={28} color="white" name="search-outline" style={{ marginRight: 8 }} />
+          <Text style={{ color: 'white', fontSize: 20 }}>Search our products</Text>
+          <Ionicons size={28} color="white" name="barcode-outline" style={{ marginLeft: 'auto' }} />
+        </View>
+      </View>
+      <View style={{ paddingVertical: 16, paddingHorizontal: 16, flexDirection: 'row', justifyContent: 'space-evenly', backgroundColor: "#000000" }}>
+        <Button
+          label="Sign in"
+          onPress={() => { }}
+          borderRadius={5}
+          backgroundColor="#ffe500"
+          color="#000000"
+          size={Button.sizes.large}
+          labelStyle={{ fontSize: 20, fontWeight: "bold" }}
+          paddingH={true} />
+        <Button
+          label="Register"
+          onPress={() => { }}
+          outline={true}
+          outlineColor={Colors.white}
+          borderRadius={5}
+          size={Button.sizes.large}
+          labelStyle={{ fontSize: 20, fontWeight: "bold" }} />
+      </View>
+      <Image
+        source={{
+          uri: "https://media.diy.com/is/image/KingfisherDigital/7d0947d3b14bf59dfe30ef421761c6ae57e43479?$BQ_HBT_D$"
+        }}
+        style={{ height: 100, width: "100%" }}
+      />
+      <View style={{ marginTop: 16, width: "100%" }}>
+        <Carousel
+          pageWidth={350 - Spacings.s5 * 2}
+          itemSpacings={Spacings.s3}
+          containerMarginHorizontal={Spacings.s1}
+          containerStyle={{ height: 300 }}
+        >
+          {carouselImages.map((image, index) => (
+            <Image
+              key={index}
+              source={{ uri: image }}
+              style={{ height: 300, width: 300 }}
+            />
+          ))}
+        </Carousel>
+      </View>
+
+      <View style={{ marginTop: 16, width: "100%" }}>
+        <Text style={{ fontWeight: "bold", textAlign: "center", fontSize: 25, marginBottom: 16 }}>Popular categories</Text>
+        <Carousel
+          pageWidth={250 - Spacings.s5 * 2}
+          itemSpacings={Spacings.s3}
+          containerMarginHorizontal={Spacings.s1}
+          containerStyle={{ height: 200 }}
+        >
+          {categoryImages.map((image, index) => (
+            <Image
+              key={index}
+              source={{ uri: image }}
+              style={{ height: 200, width: 200 }}
+            />
+          ))}
+        </Carousel>
+      </View>
+    </ScrollView >
   );
-}
+};
 
 const styles = StyleSheet.create({
-  titleContainer: {
+  headerBackground: {
+    position: 'absolute',
+    top: 0,
+    width: '100%',
+    alignItems: 'center',
+    height: 110,
+    backgroundColor: '#252324',
+  },
+  searchInput: {
+    display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
+    borderRadius: 5,
+    backgroundColor: '#3d3d3d',
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    width: '100%',
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  headerCard: {
+    elevation: 2,
+    backgroundColor: 'white',
+    borderRadius: 16,
+    display: 'flex',
+    flexDirection: 'row',
+    marginTop: 20,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
   },
 });
+
+export default HomeScreen;
